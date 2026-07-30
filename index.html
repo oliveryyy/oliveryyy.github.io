@@ -37,7 +37,8 @@
                     <img src="OliverYan.JPG" alt="Dr. Oliver Yan">
                 </div>
                 <div class="hero-content">
-                    <h1>YAN, Yongyang (Oliver) <span class="chinese-name">顏永阳</span></h1>
+                    <h1>YAN, Yongyang (Oliver)</h1>
+                    <p class="chinese-name">顏永阳</p>
                     <p class="tagline">Postdoctoral Fellow · PhD, BSc, RN</p>
                     <p class="affiliation"><a href="https://www.polyu.edu.hk/sn/" target="_blank">School of Nursing</a>, The Hong Kong Polytechnic University</p>
                     <p class="affiliation small">Supervisor: <a href="https://www.polyu.edu.hk/sn/people/academic-staff/prof-jed-montayre/" target="_blank">Prof. Jed Ray Gengoba Montayre</a></p>
@@ -309,7 +310,8 @@
         const menu = document.querySelector('.nav-menu');
 
         window.addEventListener('scroll', () => {
-            navbar.classList.toggle('scrolled', window.scrollY > 50);
+            const scrolled = window.scrollY > 80;
+            navbar.classList.toggle('scrolled', scrolled);
         });
 
         toggle.addEventListener('click', () => {

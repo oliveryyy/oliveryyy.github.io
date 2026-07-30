@@ -35,20 +35,46 @@ body {
 .navbar {
     position: fixed;
     top: 0;
-    width: 100%;
+    left: 0;
+    right: 0;
     z-index: 1000;
-    background: rgba(255,255,255,0.96);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid transparent;
-    transition: all 0.3s;
+    padding: 0;
+    transition: padding 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.navbar.scrolled { border-bottom-color: var(--border); }
+.navbar .nav-container {
+    background: rgba(255,255,255,0.96);
+    backdrop-filter: blur(12px);
+    border-radius: 0;
+    max-width: 100%;
+    padding: 0 28px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navbar.scrolled {
+    padding: 10px 16px 0;
+    pointer-events: none;
+}
+
+.navbar.scrolled .nav-container {
+    pointer-events: all;
+    max-width: 700px;
+    margin: 0 auto;
+    background: var(--primary);
+    border-radius: 40px;
+    padding: 0 24px;
+    height: 46px;
+    box-shadow: 0 4px 24px rgba(26,39,68,0.18);
+}
+
+.navbar.scrolled .nav-brand { color: #fff; }
+.navbar.scrolled .nav-menu a { color: rgba(255,255,255,0.75); font-size: 0.78rem; }
+.navbar.scrolled .nav-menu a:hover { color: #fff; }
+.navbar.scrolled .nav-toggle span { background: #fff; }
 
 .nav-container {
     max-width: 880px;
     margin: 0 auto;
-    padding: 0 28px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -142,7 +168,8 @@ h3 {
     width: 190px;
     height: 240px;
     object-fit: cover;
-    object-position: center 15%;
+    object-position: center 10%;
+    transform: scale(1.05);
     border-radius: 10px;
     box-shadow: var(--shadow);
 }
@@ -165,10 +192,11 @@ h3 {
 
 .chinese-name {
     font-family: 'IBM Plex Sans', sans-serif;
-    font-weight: 300;
-    font-size: 1.1rem;
+    font-weight: 400;
+    font-size: 1rem;
     color: var(--text-light);
-    margin-left: 4px;
+    margin-top: 2px;
+    margin-bottom: 4px;
 }
 
 .tagline {
