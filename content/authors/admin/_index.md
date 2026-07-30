@@ -26,7 +26,7 @@ social:
     link: 'mailto:oliver-yy.yan@polyu.edu.hk'
   - icon: google-scholar
     icon_pack: ai
-    link: https://scholar.google.com/citations?user=PLACEHOLDER
+    link: https://scholar.google.com/citations?user=HKS64UkAAAAJ&hl=en
   - icon: github
     icon_pack: fab
     link: https://github.com/oliveryyy
