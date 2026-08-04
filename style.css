@@ -1,13 +1,13 @@
 :root {
-    --primary: #1a2744;
-    --accent: #3b6b9a;
-    --accent-light: #e8f1f8;
-    --text: #2d3748;
-    --text-light: #5a6577;
-    --bg: #fff;
-    --tinted: #f4f7fa;
-    --border: #dfe5ed;
-    --shadow: 0 2px 8px rgba(26,39,68,0.06);
+    --primary: #1c2d48;
+    --accent: #456b8f;
+    --accent-light: #edf3f8;
+    --text: #303845;
+    --text-light: #63707e;
+    --bg: #fefefe;
+    --tinted: #f5f7f9;
+    --border: #e3e8ee;
+    --shadow: 0 2px 8px rgba(28,45,72,0.05);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -60,14 +60,14 @@ body {
     pointer-events: all;
     max-width: 700px;
     margin: 0 auto;
-    background: rgba(26, 39, 68, 0.65);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    background: rgba(28, 45, 72, 0.7);
+    backdrop-filter: blur(14px) saturate(1.2);
+    -webkit-backdrop-filter: blur(14px) saturate(1.2);
     border-radius: 40px;
-    border: 1px solid rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.1);
     padding: 0 24px;
     height: 46px;
-    box-shadow: 0 4px 24px rgba(26,39,68,0.15);
+    box-shadow: 0 4px 20px rgba(28,45,72,0.12);
 }
 
 .navbar.scrolled .nav-brand { color: #fff; }
@@ -133,14 +133,24 @@ body {
 
 h2 {
     font-family: 'Playfair Display', serif;
-    font-size: 1.65rem;
+    font-size: 1.55rem;
     font-weight: 700;
     color: var(--primary);
     margin-bottom: 28px;
-    letter-spacing: -0.3px;
-    padding-bottom: 12px;
-    border-bottom: 2px solid var(--accent);
-    display: inline-block;
+    letter-spacing: -0.2px;
+    position: relative;
+    padding-left: 16px;
+}
+
+h2::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 4px;
+    bottom: 4px;
+    width: 3px;
+    background: var(--accent);
+    border-radius: 2px;
 }
 
 h3 {
@@ -332,12 +342,13 @@ h3 {
 
 .research-num {
     position: absolute;
-    top: 14px;
-    right: 16px;
-    font-size: 0.7rem;
-    font-weight: 600;
-    color: var(--border);
-    letter-spacing: 1px;
+    top: 12px;
+    right: 14px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--accent-light);
+    letter-spacing: -0.5px;
+    font-family: 'Playfair Display', serif;
 }
 
 .research-card h4 {
@@ -509,13 +520,17 @@ footer {
         top: 58px;
         left: 0;
         right: 0;
-        background: white;
+        background: var(--primary);
         flex-direction: column;
-        padding: 12px 28px;
-        gap: 12px;
-        border-bottom: 1px solid var(--border);
+        padding: 16px 28px;
+        gap: 14px;
+        border-radius: 0 0 16px 16px;
+        box-shadow: 0 8px 24px rgba(26,39,68,0.15);
         display: none;
     }
+
+    .nav-menu a { color: rgba(255,255,255,0.85) !important; font-size: 0.88rem !important; }
+    .nav-menu a:hover { color: #fff !important; }
 
     .nav-menu.active { display: flex; }
 
