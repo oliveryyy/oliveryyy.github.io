@@ -312,17 +312,29 @@
         window.addEventListener('scroll', () => {
             const scrolled = window.scrollY > 80;
             navbar.classList.toggle('scrolled', scrolled);
+            if (!scrolled) {
+                navbar.classList.remove('menu-open');
+            }
         });
 
         toggle.addEventListener('click', () => {
-            menu.classList.toggle('active');
-            toggle.classList.toggle('active');
+            const isScrolled = navbar.classList.contains('scrolled');
+            const isMobile = window.innerWidth <= 768;
+
+            if (isMobile && isScrolled) {
+                navbar.classList.toggle('menu-open');
+                toggle.classList.toggle('active');
+            } else {
+                menu.classList.toggle('active');
+                toggle.classList.toggle('active');
+            }
         });
 
         document.querySelectorAll('.nav-menu a').forEach(link => {
             link.addEventListener('click', () => {
                 menu.classList.remove('active');
                 toggle.classList.remove('active');
+                navbar.classList.remove('menu-open');
             });
         });
     </script>
