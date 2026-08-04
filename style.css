@@ -530,52 +530,58 @@ footer {
 
     .nav-toggle { display: flex; }
 
-    /* Mobile: scrolled state becomes a small circle */
+    /* Mobile scrolled: small pill with name + hamburger */
     .navbar.scrolled {
-        padding: 12px 0 0;
-        right: 16px;
-        left: auto;
+        padding: 10px 16px 0;
+        left: 0;
+        right: 0;
         transform: none;
-        width: auto;
+        width: 100%;
     }
 
     .navbar.scrolled .nav-container {
         max-width: none;
-        width: 46px;
-        height: 46px;
-        border-radius: 50%;
-        padding: 0;
-        justify-content: center;
-        margin: 0 0 0 auto;
+        width: auto;
+        height: 44px;
+        border-radius: 24px;
+        padding: 0 16px;
+        margin: 0 auto;
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    .navbar.scrolled .nav-brand { display: none; }
-    .navbar.scrolled .nav-menu { display: none; }
-
-    /* When menu is open on mobile scrolled: expand to full panel */
-    .navbar.scrolled.menu-open .nav-container {
-        width: calc(100vw - 32px);
-        height: auto;
-        border-radius: 20px;
-        padding: 14px 20px 20px;
-        flex-wrap: wrap;
+    .navbar.scrolled .nav-brand {
+        display: block;
+        font-size: 0.95rem;
     }
 
-    .navbar.scrolled.menu-open .nav-brand { display: none; }
-
-    .navbar.scrolled.menu-open .nav-menu {
-        display: flex;
+    .navbar.scrolled .nav-menu {
+        position: absolute;
+        top: 52px;
+        left: 0;
+        right: 0;
+        background: rgba(28, 45, 72, 0.92);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
         flex-direction: column;
-        gap: 6px;
-        width: 100%;
-        margin-top: 8px;
+        padding: 0 20px;
+        border-radius: 16px;
+        max-height: 0;
+        overflow: hidden;
+        display: flex;
+        transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                    padding 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    .navbar.scrolled.menu-open .nav-menu a {
+    .navbar.scrolled .nav-menu.active {
+        max-height: 360px;
+        padding: 14px 20px 18px;
+    }
+
+    .navbar.scrolled .nav-menu a {
         color: rgba(255,255,255,0.85) !important;
         font-size: 0.88rem !important;
-        padding: 8px 0;
+        padding: 9px 0;
+        display: block;
     }
 
     /* Mobile: non-scrolled dropdown */
